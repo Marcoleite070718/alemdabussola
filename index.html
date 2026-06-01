@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--
+  =====================================================================
+  ALÉM DA BÚSSOLA — Landing page / hub principal da marca
+  ---------------------------------------------------------------------
+  Stack:  HTML5 + TailwindCSS (CDN) + JavaScript puro
+  Deploy: 100% estático — pronto para GitHub Pages (sem backend)
+  Como publicar:
+    1. Suba este arquivo como "index.html" no seu repositório
+    2. Settings > Pages > Branch: main / root
+    3. Pronto: https://seu-usuario.github.io/seu-repo/
+  ---------------------------------------------------------------------
+  ONDE PERSONALIZAR (procure por estes marcadores no código):
+    [LINK]   -> trocar URLs de redes sociais e afiliados
+    [IMG]    -> trocar imagens (hero, casal, destinos)
+    [TEXTO]  -> ajustar textos institucionais
+    [DADOS]  -> editar os arrays de destinos / afiliados / métricas
+  =====================================================================
+-->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============ SEO BÁSICO ============ -->
+  <title>Além da Bússola — Viagens, liberdade e histórias pelo mundo</title>
+  <meta name="description" content="Casal brasileiro construindo uma vida de liberdade através de viagens, experiências autênticas e criação de conteúdo. Roteiros, destinos e inspiração para você explorar o mundo além dos mapas." />
+  <meta name="keywords" content="viagens, casal viajante, roteiros, destinos, mochilão, lifestyle, criadores de conteúdo, turismo, Brasil, Europa" />
+  <meta name="author" content="Além da Bússola" />
+  <meta name="theme-color" content="#1B2620" />
+  <link rel="canonical" href="https://alemdabussola.com/" />
+
+  <!-- ============ OPEN GRAPH (Facebook / WhatsApp) ============ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Além da Bússola — Explorando o mundo além dos mapas" />
+  <meta property="og:description" content="Casal brasileiro construindo uma vida de liberdade através de viagens, experiências e histórias pelo mundo." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&q=80" />
+  <meta property="og:url" content="https://alemdabussola.com/" />
+  <meta property="og:site_name" content="Além da Bússola" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- ============ TWITTER CARD ============ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Além da Bússola — Explorando o mundo além dos mapas" />
+  <meta name="twitter:description" content="Casal brasileiro construindo uma vida de liberdade através de viagens e histórias pelo mundo." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&q=80" />
+
+  <!-- ============ FAVICON TEMPORÁRIO (bússola em SVG inline) ============ -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%231B2620'/%3E%3Cpolygon points='50,22 58,50 50,78 42,50' fill='%23C5683E'/%3E%3Cpolygon points='22,50 50,42 78,50 50,58' fill='%23E0A458'/%3E%3Ccircle cx='50' cy='50' r='5' fill='%23F4EFE6'/%3E%3C/svg%3E" />
+
+  <!-- ============ TIPOGRAFIA (Google Fonts) ============ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ============ ESTILO DA MARCA (Tailwind compilado e embutido) ============ -->
+  <!-- CSS estático gerado a partir das classes usadas na página.
+       Não depende de CDN nem de JavaScript: carrega instantâneo, sem "flash" sem estilo. -->
+  <style id="tw-base">
+*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:Manrope,sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0}.inset-x-0{left:0;right:0}.-bottom-6{bottom:-1.5rem}.-left-4{left:-1rem}.-right-24{right:-6rem}.-top-24{top:-6rem}.bottom-0{bottom:0}.bottom-8{bottom:2rem}.left-1\/2{left:50%}.top-0{top:0}.-z-10{z-index:-10}.z-10{z-index:10}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:.25rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-14{margin-bottom:3.5rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-7{margin-bottom:1.75rem}.mb-8{margin-bottom:2rem}.mt-10{margin-top:2.5rem}.mt-2{margin-top:.5rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-7{margin-top:1.75rem}.mt-8{margin-top:2rem}.block{display:block}.inline-block{display:inline-block}.inline{display:inline}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-12{height:3rem}.h-14{height:3.5rem}.h-16{height:4rem}.h-20{height:5rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-64{height:16rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-96{height:24rem}.h-\[460px\]{height:460px}.h-full{height:100%}.h-px{height:1px}.min-h-\[100svh\]{min-height:100svh}.min-h-screen{min-height:100vh}.w-12{width:3rem}.w-14{width:3.5rem}.w-16{width:4rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-7{width:1.75rem}.w-8{width:2rem}.w-9{width:2.25rem}.w-96{width:24rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-5xl{max-width:64rem}.max-w-7xl{max-width:80rem}.max-w-sm{max-width:24rem}.flex-1{flex:1 1 0%}.grow{flex-grow:1}.-translate-x-1\/2{--tw-translate-x:-50%}.-translate-x-1\/2,.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.flex-col{flex-direction:column}.place-items-center{place-items:center}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-12{gap:3rem}.gap-14{gap:3.5rem}.gap-2{gap:.5rem}.gap-2\.5{gap:.625rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.gap-9{gap:2.25rem}.gap-x-6{-moz-column-gap:1.5rem;column-gap:1.5rem}.gap-y-12{row-gap:3rem}.space-y-3>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.75rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.75rem*var(--tw-space-y-reverse))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem*var(--tw-space-y-reverse))}.space-y-5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem*var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-\[2\.5rem\]{border-radius:2.5rem}.rounded-\[2rem\]{border-radius:2rem}.rounded-full{border-radius:9999px}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-ink\/10{border-color:rgba(27,38,32,.1)}.border-ink\/5{border-color:rgba(27,38,32,.05)}.border-paper\/40{border-color:hsla(42,56%,96%,.4)}.border-white\/10{border-color:hsla(0,0%,100%,.1)}.bg-amber\/15{background-color:rgba(224,164,88,.15)}.bg-amber\/70{background-color:rgba(224,164,88,.7)}.bg-forest{--tw-bg-opacity:1;background-color:rgb(47 79 67/var(--tw-bg-opacity,1))}.bg-ink{--tw-bg-opacity:1;background-color:rgb(27 38 32/var(--tw-bg-opacity,1))}.bg-ink\/70{background-color:rgba(27,38,32,.7)}.bg-ink\/95{background-color:rgba(27,38,32,.95)}.bg-paper{--tw-bg-opacity:1;background-color:rgb(251 248 241/var(--tw-bg-opacity,1))}.bg-paper\/95{background-color:hsla(42,56%,96%,.95)}.bg-sand{--tw-bg-opacity:1;background-color:rgb(244 239 230/var(--tw-bg-opacity,1))}.bg-terracota{--tw-bg-opacity:1;background-color:rgb(197 104 62/var(--tw-bg-opacity,1))}.bg-terracota\/60{background-color:rgba(197,104,62,.6)}.bg-white\/5{background-color:hsla(0,0%,100%,.05)}.bg-gradient-to-b{background-image:linear-gradient(to bottom,var(--tw-gradient-stops))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right,var(--tw-gradient-stops))}.bg-gradient-to-t{background-image:linear-gradient(to top,var(--tw-gradient-stops))}.from-amber{--tw-gradient-from:#e0a458 var(--tw-gradient-from-position);--tw-gradient-to:rgba(224,164,88,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-ink\/70{--tw-gradient-from:rgba(27,38,32,.7) var(--tw-gradient-from-position);--tw-gradient-to:rgba(27,38,32,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-ink\/95{--tw-gradient-from:rgba(27,38,32,.95) var(--tw-gradient-from-position);--tw-gradient-to:rgba(27,38,32,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-ink\/30{--tw-gradient-to:rgba(27,38,32,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgba(27,38,32,.3) var(--tw-gradient-via-position),var(--tw-gradient-to)}.via-ink\/40{--tw-gradient-to:rgba(27,38,32,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgba(27,38,32,.4) var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-ink\/85{--tw-gradient-to:rgba(27,38,32,.85) var(--tw-gradient-to-position)}.to-terracota{--tw-gradient-to:#c5683e var(--tw-gradient-to-position)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.object-cover{-o-object-fit:cover;object-fit:cover}.p-5{padding:1.25rem}.p-8{padding:2rem}.p-9{padding:2.25rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.px-9{padding-left:2.25rem;padding-right:2.25rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-3\.5{padding-top:.875rem;padding-bottom:.875rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pb-10{padding-bottom:2.5rem}.pb-14{padding-bottom:3.5rem}.pt-1{padding-top:.25rem}.pt-20{padding-top:5rem}.pt-8{padding-top:2rem}.text-left{text-align:left}.text-center{text-align:center}.font-display{font-family:Fraunces,serif}.font-sans{font-family:Manrope,sans-serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-\[11px\]{font-size:11px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-light{font-weight:300}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-\[0\.95\]{line-height:.95}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-\[0\.2em\]{letter-spacing:.2em}.tracking-\[0\.3em\]{letter-spacing:.3em}.tracking-tight{letter-spacing:-.025em}.tracking-wide{letter-spacing:.025em}.text-amber{--tw-text-opacity:1;color:rgb(224 164 88/var(--tw-text-opacity,1))}.text-amber\/70{color:rgba(224,164,88,.7)}.text-forest{--tw-text-opacity:1;color:rgb(47 79 67/var(--tw-text-opacity,1))}.text-ink{--tw-text-opacity:1;color:rgb(27 38 32/var(--tw-text-opacity,1))}.text-ink\/60{color:rgba(27,38,32,.6)}.text-ink\/80{color:rgba(27,38,32,.8)}.text-moss{--tw-text-opacity:1;color:rgb(92 122 107/var(--tw-text-opacity,1))}.text-paper{--tw-text-opacity:1;color:rgb(251 248 241/var(--tw-text-opacity,1))}.text-paper\/40{color:hsla(42,56%,96%,.4)}.text-paper\/50{color:hsla(42,56%,96%,.5)}.text-paper\/60{color:hsla(42,56%,96%,.6)}.text-paper\/65{color:hsla(42,56%,96%,.65)}.text-paper\/70{color:hsla(42,56%,96%,.7)}.text-paper\/80{color:hsla(42,56%,96%,.8)}.text-paper\/85{color:hsla(42,56%,96%,.85)}.text-paper\/90{color:hsla(42,56%,96%,.9)}.text-terracota{--tw-text-opacity:1;color:rgb(197 104 62/var(--tw-text-opacity,1))}.text-white\/5{color:hsla(0,0%,100%,.05)}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-15{opacity:.15}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgba(0,0,0,.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color)}.shadow-2xl,.shadow-lg{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color)}.shadow-md{--tw-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color)}.shadow-md,.shadow-xl{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color),0 8px 10px -6px var(--tw-shadow-color)}.shadow-ink\/10{--tw-shadow-color:rgba(27,38,32,.1);--tw-shadow:var(--tw-shadow-colored)}.shadow-ink\/20{--tw-shadow-color:rgba(27,38,32,.2);--tw-shadow:var(--tw-shadow-colored)}.shadow-terracota\/30{--tw-shadow-color:rgba(197,104,62,.3);--tw-shadow:var(--tw-shadow-colored)}.outline-none{outline:2px solid transparent;outline-offset:2px}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px)}.backdrop-blur-md,.backdrop-blur-sm{-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.duration-300{transition-duration:.3s}.duration-500{transition-duration:.5s}.ease-in-out{transition-timing-function:cubic-bezier(.4,0,.2,1)}.ease-out{transition-timing-function:cubic-bezier(0,0,.2,1)}.selection\:bg-terracota ::-moz-selection{--tw-bg-opacity:1;background-color:rgb(197 104 62/var(--tw-bg-opacity,1))}.selection\:bg-terracota ::selection{--tw-bg-opacity:1;background-color:rgb(197 104 62/var(--tw-bg-opacity,1))}.selection\:text-paper ::-moz-selection{--tw-text-opacity:1;color:rgb(251 248 241/var(--tw-text-opacity,1))}.selection\:text-paper ::selection{--tw-text-opacity:1;color:rgb(251 248 241/var(--tw-text-opacity,1))}.selection\:bg-terracota::-moz-selection{--tw-bg-opacity:1;background-color:rgb(197 104 62/var(--tw-bg-opacity,1))}.selection\:bg-terracota::selection{--tw-bg-opacity:1;background-color:rgb(197 104 62/var(--tw-bg-opacity,1))}.selection\:text-paper::-moz-selection{--tw-text-opacity:1;color:rgb(251 248 241/var(--tw-text-opacity,1))}.selection\:text-paper::selection{--tw-text-opacity:1;color:rgb(251 248 241/var(--tw-text-opacity,1))}.hover\:bg-amber:hover{--tw-bg-opacity:1;background-color:rgb(224 164 88/var(--tw-bg-opacity,1))}.hover\:bg-forest:hover{--tw-bg-opacity:1;background-color:rgb(47 79 67/var(--tw-bg-opacity,1))}.hover\:bg-paper:hover{--tw-bg-opacity:1;background-color:rgb(251 248 241/var(--tw-bg-opacity,1))}.hover\:text-ink:hover{--tw-text-opacity:1;color:rgb(27 38 32/var(--tw-text-opacity,1))}.hover\:text-paper:hover{--tw-text-opacity:1;color:rgb(251 248 241/var(--tw-text-opacity,1))}.focus\:border-terracota:focus{--tw-border-opacity:1;border-color:rgb(197 104 62/var(--tw-border-opacity,1))}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000)}.focus\:ring-terracota\/20:focus{--tw-ring-color:rgba(197,104,62,.2)}.group\/btn:hover .group-hover\/btn\:translate-x-1{--tw-translate-x:0.25rem}.group:hover .group-hover\:scale-110,.group\/btn:hover .group-hover\/btn\:translate-x-1{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1}@media (min-width:640px){.sm\:-left-8{left:-2rem}.sm\:h-72{height:18rem}.sm\:h-\[560px\]{height:560px}.sm\:w-auto{width:auto}.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-end{align-items:flex-end}.sm\:justify-between{justify-content:space-between}.sm\:p-14{padding:3.5rem}.sm\:p-6{padding:1.5rem}.sm\:py-24{padding-top:6rem;padding-bottom:6rem}.sm\:py-28{padding-top:7rem;padding-bottom:7rem}.sm\:text-4xl{font-size:2.25rem;line-height:2.5rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-6xl{font-size:3.75rem;line-height:1}.sm\:text-sm{font-size:.875rem;line-height:1.25rem}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}.sm\:opacity-80{opacity:.8}.group:hover .sm\:group-hover\:translate-x-1{--tw-translate-x:0.25rem;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .sm\:group-hover\:opacity-100{opacity:1}}@media (min-width:768px){.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}}@media (min-width:1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.lg\:gap-20{gap:5rem}.lg\:px-10{padding-left:2.5rem;padding-right:2.5rem}.lg\:text-8xl{font-size:6rem;line-height:1}}
+  </style>
+
+  <!-- ============ CSS PERSONALIZADO (animações, texturas, detalhes) ============ -->
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background-color: #F4EFE6; }
+
+    /* Textura sutil de "grão" sobre toda a página — dá profundidade premium */
+    .grain::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      pointer-events: none;
+      opacity: .35;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+    }
+
+    /* Animação de revelação ao rolar (acionada via IntersectionObserver) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1);
+      will-change: opacity, transform;
+    }
+    .reveal.is-visible { opacity: 1; transform: none; }
+
+    /* Linha decorativa que cresce ao revelar (usada em títulos de seção) */
+    .grow-line { transition: width 1.1s cubic-bezier(.16,1,.3,1); }
+
+    /* Zoom suave da imagem do hero (movimento lento e cinematográfico) */
+    @keyframes kenburns {
+      0%   { transform: scale(1)    translate(0, 0); }
+      100% { transform: scale(1.12) translate(-1.5%, -1%); }
+    }
+    .kenburns { animation: kenburns 22s ease-out forwards; }
+
+    /* Bússola girando lentamente (decoração) */
+    @keyframes spin-slow { to { transform: rotate(360deg); } }
+    .spin-slow { animation: spin-slow 60s linear infinite; }
+
+    /* Indicador de scroll pulsante no hero */
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+    .bob { animation: bob 2.2s ease-in-out infinite; }
+
+    /* Sublinhado animado dos links de navegação */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: -4px;
+      height: 1.5px; width: 0;
+      background: currentColor;
+      transition: width .35s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Efeito de "elevação" nos cards */
+    .lift { transition: transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s ease; }
+    .lift:hover { transform: translateY(-8px); box-shadow: 0 28px 50px -24px rgba(27,38,32,.45); }
+
+    /* Container que recorta o zoom da imagem nos cards de destino */
+    .zoom-img { transition: transform .9s cubic-bezier(.16,1,.3,1); }
+    .group:hover .zoom-img { transform: scale(1.08); }
+
+    /* Respeita usuários que preferem menos movimento (acessibilidade) */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .kenburns, .spin-slow, .bob { animation: none; }
+    }
+  </style>
+</head>
+
+<body class="grain font-sans text-ink antialiased selection:bg-terracota selection:text-paper">
+
+  <!-- =================================================================
+       NAVEGAÇÃO (fixa no topo, fica sólida ao rolar)
+       ================================================================= -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-500">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
+
+      <!-- Logo -->
+      <a href="#hero" class="flex items-center gap-2.5 group">
+        <!-- Ícone de bússola -->
+        <svg class="w-8 h-8 spin-slow text-amber" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <circle cx="50" cy="50" r="44" stroke="currentColor" stroke-width="4"/>
+          <polygon points="50,24 57,50 50,76 43,50" fill="#C5683E"/>
+          <polygon points="24,50 50,43 76,50 50,57" fill="currentColor"/>
+          <circle cx="50" cy="50" r="4" fill="#F4EFE6"/>
+        </svg>
+        <span id="brand-name" class="font-display text-xl tracking-tight text-paper transition-colors duration-500">Além da Bússola</span>
+      </a>
+
+      <!-- Links desktop -->
+      <ul id="nav-links" class="hidden md:flex items-center gap-9 text-sm font-medium text-paper/90 transition-colors duration-500">
+        <li><a href="#sobre"    class="nav-link">Quem Somos</a></li>
+        <li><a href="#planeje"  class="nav-link">Planeje</a></li>
+        <li><a href="#destinos" class="nav-link">Destinos</a></li>
+        <li><a href="#jornada"  class="nav-link">Jornada</a></li>
+        <li>
+          <a href="#contato" class="inline-block px-5 py-2.5 rounded-full bg-terracota text-paper hover:bg-amber hover:text-ink transition-colors duration-300">
+            Trabalhe Conosco
+          </a>
+        </li>
+      </ul>
+
+      <!-- Botão menu mobile -->
+      <button id="menu-btn" class="md:hidden text-paper" aria-label="Abrir menu" aria-expanded="false">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </nav>
+
+    <!-- Menu mobile (dropdown) -->
+    <div id="mobile-menu" class="md:hidden hidden bg-ink/95 backdrop-blur-md border-t border-white/10">
+      <ul class="px-6 py-6 space-y-4 text-paper text-lg font-medium">
+        <li><a href="#sobre"    class="block py-1 mobile-link">Quem Somos</a></li>
+        <li><a href="#planeje"  class="block py-1 mobile-link">Planeje sua viagem</a></li>
+        <li><a href="#destinos" class="block py-1 mobile-link">Destinos</a></li>
+        <li><a href="#jornada"  class="block py-1 mobile-link">Nossa jornada</a></li>
+        <li><a href="#redes"    class="block py-1 mobile-link">Redes sociais</a></li>
+        <li><a href="#contato"  class="block py-2 mt-2 text-center rounded-full bg-terracota mobile-link">Trabalhe Conosco</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- =================================================================
+       1. HERO — imagem em tela cheia + título + CTAs
+       ================================================================= -->
+  <!-- min-h-[100svh] usa a altura VISÍVEL real no celular (evita corte pela barra do navegador) -->
+  <section id="hero" class="relative min-h-screen min-h-[100svh] flex items-center justify-center overflow-hidden">
+    <!-- [IMG] Imagem de fundo do hero (com zoom lento "Ken Burns") -->
+    <div class="absolute inset-0 -z-10">
+      <img
+        src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1500&q=75"
+        alt="Vista de montanhas iluminadas ao amanhecer"
+        class="w-full h-full object-cover kenburns"
+        fetchpriority="high"
+        onerror="this.onerror=null;this.src='https://picsum.photos/seed/alemdabussola-hero/1920/1080';"
+      />
+      <!-- Gradiente escuro para garantir leitura do texto -->
+      <div class="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/40 to-ink/85"></div>
+    </div>
+
+    <!-- Conteúdo do hero -->
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto pt-20">
+      <!-- Selo / kicker -->
+      <p class="reveal inline-flex items-center gap-2 text-amber text-xs sm:text-sm tracking-[0.3em] uppercase mb-6">
+        <span class="w-8 h-px bg-amber/70"></span>
+        Diário de um casal viajante
+        <span class="w-8 h-px bg-amber/70"></span>
+      </p>
+
+      <!-- [TEXTO] Título principal -->
+      <h1 class="reveal font-display text-paper text-5xl sm:text-6xl lg:text-8xl font-light leading-[0.95] tracking-tight" style="transition-delay:.1s">
+        Além da <span class="italic text-amber">Bússola</span>
+      </h1>
+
+      <!-- [TEXTO] Subtítulo -->
+      <p class="reveal mt-7 text-paper/85 text-lg sm:text-xl max-w-2xl mx-auto font-light leading-relaxed" style="transition-delay:.2s">
+        Construindo uma vida de liberdade através de viagens, experiências e histórias pelo mundo.
+      </p>
+
+      <!-- CTA principal + botões de redes sociais -->
+      <div class="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4" style="transition-delay:.3s">
+        <a href="#destinos" class="w-full sm:w-auto px-8 py-4 rounded-full bg-terracota text-paper font-semibold tracking-wide hover:bg-amber hover:text-ink transition-all duration-300 shadow-lg shadow-terracota/30">
+          Explore nossos destinos
+        </a>
+        <div class="flex items-center gap-3">
+          <!-- [LINK] Instagram -->
+          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"
+             class="w-12 h-12 grid place-items-center rounded-full border border-paper/40 text-paper hover:bg-paper hover:text-ink transition-all duration-300">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.3.07 1.69.07 4.9s0 3.6-.07 4.9c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.3.06-1.69.07-4.9.07s-3.6 0-4.9-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.4 2.21 8.8 2.2 12 2.2Zm0 1.8c-3.15 0-3.52.01-4.76.07-.9.04-1.39.2-1.71.32-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.12.32-.28.81-.32 1.71C3.41 8.48 3.4 8.85 3.4 12s.01 3.52.07 4.76c.04.9.2 1.39.32 1.71.17.43.37.74.69 1.06.32.32.63.52 1.06.69.32.12.81.28 1.71.32 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c.9-.04 1.39-.2 1.71-.32.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.12-.32.28-.81.32-1.71.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.04-.9-.2-1.39-.32-1.71a2.85 2.85 0 0 0-.69-1.06 2.85 2.85 0 0 0-1.06-.69c-.32-.12-.81-.28-1.71-.32C15.52 4.01 15.15 4 12 4Zm0 3.06A4.94 4.94 0 1 1 7.06 12 4.94 4.94 0 0 1 12 7.06Zm0 8.14A3.2 3.2 0 1 0 8.8 12a3.2 3.2 0 0 0 3.2 3.2Zm6.3-8.34a1.15 1.15 0 1 1-1.15-1.15 1.15 1.15 0 0 1 1.15 1.15Z"/></svg>
+          </a>
+          <!-- [LINK] TikTok -->
+          <a href="https://tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok"
+             class="w-12 h-12 grid place-items-center rounded-full border border-paper/40 text-paper hover:bg-paper hover:text-ink transition-all duration-300">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.27 0 .53.04.78.12v-3.2a5.84 5.84 0 0 0-.78-.05A5.78 5.78 0 1 0 15.6 15.4V9.01a7.36 7.36 0 0 0 4.4 1.45V7.32a4.3 4.3 0 0 1-3.4-1.5Z"/></svg>
+          </a>
+          <!-- [LINK] YouTube -->
+          <a href="https://youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"
+             class="w-12 h-12 grid place-items-center rounded-full border border-paper/40 text-paper hover:bg-paper hover:text-ink transition-all duration-300">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.74a2.5 2.5 0 0 0-1.76-1.77C19.28 5.1 12 5.1 12 5.1s-7.28 0-8.84.39A2.5 2.5 0 0 0 1.4 7.26C1 8.8 1 12 1 12s0 3.2.4 4.74a2.5 2.5 0 0 0 1.76 1.77c1.56.39 8.84.39 8.84.39s7.28 0 8.84-.39a2.5 2.5 0 0 0 1.76-1.77C23 15.2 23 12 23 12ZM9.75 15.02V8.98L15.5 12l-5.75 3.02Z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Indicador de scroll -->
+    <a href="#sobre" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-paper/70 bob" aria-label="Rolar para baixo">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+    </a>
+  </section>
+
+  <!-- =================================================================
+       2. QUEM SOMOS — foto do casal + texto institucional
+       ================================================================= -->
+  <section id="sobre" class="py-16 sm:py-28 bg-sand">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+
+      <!-- [IMG] Foto do casal -->
+      <div class="reveal relative">
+        <div class="overflow-hidden rounded-[2rem] shadow-2xl shadow-ink/20">
+          <img
+            src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?w=1000&q=80"
+            alt="Casal viajando juntos"
+            loading="lazy"
+            class="w-full h-[460px] sm:h-[560px] object-cover"
+            onerror="this.onerror=null;this.src='https://picsum.photos/seed/alemdabussola-casal/1000/1200';"
+          />
+        </div>
+        <!-- Cartãozinho decorativo sobreposto -->
+        <div class="absolute -bottom-6 -left-4 sm:-left-8 bg-paper rounded-2xl shadow-xl px-6 py-4 flex items-center gap-3">
+          <svg class="w-9 h-9 text-terracota" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="44" stroke="currentColor" stroke-width="5"/>
+            <polygon points="50,26 56,50 50,74 44,50" fill="currentColor"/>
+          </svg>
+          <div>
+            <p class="font-display text-lg leading-none text-ink">Sem fronteiras</p>
+            <p class="text-xs text-moss tracking-wide">desde o primeiro destino</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Texto -->
+      <div>
+        <p class="reveal text-terracota text-sm tracking-[0.3em] uppercase mb-4">Quem Somos</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl font-light leading-tight text-ink mb-3">
+          Uma vida construída <span class="italic text-forest">sem fronteiras</span>
+        </h2>
+        <!-- Linha decorativa que cresce ao aparecer -->
+        <span class="reveal grow-line block h-px bg-terracota/60 mb-7" style="width:0" data-grow="120"></span>
+
+        <!-- [TEXTO] Texto institucional -->
+        <div class="reveal space-y-5 text-ink/80 text-lg leading-relaxed font-light" style="transition-delay:.1s">
+          <p>
+            Somos um casal apaixonado por viagens, experiências autênticas e pela ideia de
+            construir uma vida sem fronteiras.
+          </p>
+          <p>
+            Criamos o <strong class="font-semibold text-ink">Além da Bússola</strong> para
+            compartilhar roteiros, destinos, aprendizados e momentos reais de quem busca
+            conhecer o mundo além dos pontos turísticos tradicionais.
+          </p>
+          <p>
+            Nossa missão é inspirar outras pessoas a viajarem mais, explorarem novos lugares e
+            criarem memórias inesquecíveis.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       3. PLANEJE SUA PRÓXIMA VIAGEM — cards de afiliados
+       ================================================================= -->
+  <section id="planeje" class="py-16 sm:py-28 bg-ink text-paper relative overflow-hidden">
+    <!-- Bússola gigante decorativa de fundo -->
+    <svg class="absolute -right-24 -top-24 w-96 h-96 text-white/5 spin-slow" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <circle cx="50" cy="50" r="48" stroke="currentColor" stroke-width="1"/>
+      <circle cx="50" cy="50" r="36" stroke="currentColor" stroke-width="1"/>
+      <polygon points="50,14 56,50 50,86 44,50" fill="currentColor"/>
+      <polygon points="14,50 50,44 86,50 50,56" fill="currentColor"/>
+    </svg>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-amber text-sm tracking-[0.3em] uppercase mb-4">Planeje sua próxima viagem</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl font-light leading-tight">
+          Tudo o que você precisa para <span class="italic text-amber">partir</span>
+        </h2>
+        <p class="reveal mt-5 text-paper/70 font-light text-lg" style="transition-delay:.1s">
+          As ferramentas e parceiros que usamos em todas as nossas viagens — selecionados por quem viaja de verdade.
+        </p>
+      </div>
+
+      <!-- Grid de cards (renderizado via JS — ver array AFILIADOS) -->
+      <div id="afiliados-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+      <p class="reveal text-center text-xs text-paper/40 mt-8">
+        Alguns links podem ser de afiliados. Indicamos apenas serviços em que confiamos.
+      </p>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       4. NOSSOS DESTINOS — galeria visual
+       ================================================================= -->
+  <section id="destinos" class="py-16 sm:py-28 bg-sand">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-terracota text-sm tracking-[0.3em] uppercase mb-4">Nossos Destinos</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl font-light leading-tight text-ink">
+            Lugares que nos <span class="italic text-forest">transformaram</span>
+          </h2>
+        </div>
+        <p class="reveal text-ink/60 font-light max-w-sm" style="transition-delay:.1s">
+          De praias caribenhas a vilarejos europeus — cada destino é uma história que vivemos.
+        </p>
+      </div>
+
+      <!-- Galeria (renderizada via JS — ver array DESTINOS) -->
+      <div id="destinos-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       5. ACOMPANHE NOSSA JORNADA — contadores animados
+       ================================================================= -->
+  <section id="jornada" class="py-16 sm:py-24 bg-forest text-paper relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="text-center mb-16">
+        <p class="reveal text-amber text-sm tracking-[0.3em] uppercase mb-4">Acompanhe nossa jornada</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl font-light">
+          Cada número é uma <span class="italic text-amber">memória</span>
+        </h2>
+      </div>
+
+      <!-- [DADOS] Contadores: edite data-target / data-suffix -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-6 text-center">
+        <div class="reveal">
+          <div class="counter font-display text-5xl sm:text-6xl font-light text-amber" data-target="18" data-suffix="">0</div>
+          <p class="mt-2 text-paper/70 text-sm tracking-wide uppercase">Países visitados</p>
+        </div>
+        <div class="reveal" style="transition-delay:.1s">
+          <div class="counter font-display text-5xl sm:text-6xl font-light text-amber" data-target="92000" data-suffix="" data-format="km">0</div>
+          <p class="mt-2 text-paper/70 text-sm tracking-wide uppercase">Km percorridos</p>
+        </div>
+        <div class="reveal" style="transition-delay:.2s">
+          <div class="counter font-display text-5xl sm:text-6xl font-light text-amber" data-target="340" data-suffix="+">0</div>
+          <p class="mt-2 text-paper/70 text-sm tracking-wide uppercase">Conteúdos publicados</p>
+        </div>
+        <div class="reveal" style="transition-delay:.3s">
+          <div class="counter font-display text-5xl sm:text-6xl font-light text-amber" data-target="125" data-suffix="K+">0</div>
+          <p class="mt-2 text-paper/70 text-sm tracking-wide uppercase">Seguidores</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       6. REDES SOCIAIS — botões grandes
+       ================================================================= -->
+  <section id="redes" class="py-16 sm:py-28 bg-sand">
+    <div class="max-w-5xl mx-auto px-6 lg:px-10 text-center">
+      <p class="reveal text-terracota text-sm tracking-[0.3em] uppercase mb-4">Redes Sociais</p>
+      <h2 class="reveal font-display text-4xl sm:text-5xl font-light text-ink mb-4">
+        Venha viajar <span class="italic text-forest">com a gente</span>
+      </h2>
+      <p class="reveal text-ink/60 font-light text-lg mb-12" style="transition-delay:.1s">
+        Acompanhe os bastidores, roteiros e histórias em tempo real.
+      </p>
+
+      <div class="grid sm:grid-cols-3 gap-5">
+        <!-- [LINK] Instagram -->
+        <a href="https://instagram.com/" target="_blank" rel="noopener"
+           class="reveal lift group flex flex-col items-center gap-4 p-9 rounded-3xl bg-paper border border-ink/5">
+          <span class="w-16 h-16 grid place-items-center rounded-2xl bg-gradient-to-br from-amber to-terracota text-paper group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.3.07 1.69.07 4.9s0 3.6-.07 4.9c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.3.06-1.69.07-4.9.07s-3.6 0-4.9-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.4 2.21 8.8 2.2 12 2.2Zm0 4.86A4.94 4.94 0 1 1 7.06 12 4.94 4.94 0 0 1 12 7.06Zm0 8.14A3.2 3.2 0 1 0 8.8 12a3.2 3.2 0 0 0 3.2 3.2Zm6.3-8.34a1.15 1.15 0 1 1-1.15-1.15 1.15 1.15 0 0 1 1.15 1.15Z"/></svg>
+          </span>
+          <span class="font-display text-2xl text-ink">Instagram</span>
+          <span class="text-sm text-moss">@alemdabussola</span>
+        </a>
+
+        <!-- [LINK] TikTok -->
+        <a href="https://tiktok.com/" target="_blank" rel="noopener"
+           class="reveal lift group flex flex-col items-center gap-4 p-9 rounded-3xl bg-paper border border-ink/5" style="transition-delay:.1s">
+          <span class="w-16 h-16 grid place-items-center rounded-2xl bg-ink text-paper group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.27 0 .53.04.78.12v-3.2a5.84 5.84 0 0 0-.78-.05A5.78 5.78 0 1 0 15.6 15.4V9.01a7.36 7.36 0 0 0 4.4 1.45V7.32a4.3 4.3 0 0 1-3.4-1.5Z"/></svg>
+          </span>
+          <span class="font-display text-2xl text-ink">TikTok</span>
+          <span class="text-sm text-moss">@alemdabussola</span>
+        </a>
+
+        <!-- [LINK] YouTube -->
+        <a href="https://youtube.com/" target="_blank" rel="noopener"
+           class="reveal lift group flex flex-col items-center gap-4 p-9 rounded-3xl bg-paper border border-ink/5" style="transition-delay:.2s">
+          <span class="w-16 h-16 grid place-items-center rounded-2xl bg-terracota text-paper group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.74a2.5 2.5 0 0 0-1.76-1.77C19.28 5.1 12 5.1 12 5.1s-7.28 0-8.84.39A2.5 2.5 0 0 0 1.4 7.26C1 8.8 1 12 1 12s0 3.2.4 4.74a2.5 2.5 0 0 0 1.76 1.77c1.56.39 8.84.39 8.84.39s7.28 0 8.84-.39a2.5 2.5 0 0 0 1.76-1.77C23 15.2 23 12 23 12ZM9.75 15.02V8.98L15.5 12l-5.75 3.02Z"/></svg>
+          </span>
+          <span class="font-display text-2xl text-ink">YouTube</span>
+          <span class="text-sm text-moss">Além da Bússola</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       7. TRABALHE CONOSCO — chamada para parcerias
+       ================================================================= -->
+  <section id="contato" class="py-16 sm:py-28 bg-ink text-paper relative overflow-hidden">
+    <!-- [IMG] textura de fundo sutil -->
+    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1600&q=80"
+         alt="" aria-hidden="true" loading="lazy"
+         class="absolute inset-0 w-full h-full object-cover opacity-15"
+         onerror="this.style.display='none'" />
+    <div class="absolute inset-0 bg-ink/70"></div>
+
+    <div class="relative max-w-3xl mx-auto px-6 text-center">
+      <p class="reveal text-amber text-sm tracking-[0.3em] uppercase mb-4">Trabalhe Conosco</p>
+      <h2 class="reveal font-display text-4xl sm:text-5xl font-light leading-tight mb-6">
+        Vamos criar algo <span class="italic text-amber">memorável</span> juntos
+      </h2>
+      <!-- [TEXTO] -->
+      <p class="reveal text-paper/80 text-lg font-light leading-relaxed mb-10" style="transition-delay:.1s">
+        Marcas, hotéis, pousadas, restaurantes e empresas de turismo podem entrar em contato
+        para parcerias, campanhas e produção de conteúdo.
+      </p>
+      <!-- [LINK] Botão de contato (troque o e-mail) -->
+      <a href="mailto:contato@alemdabussola.com?subject=Proposta%20de%20parceria"
+         class="reveal inline-flex items-center gap-3 px-9 py-4 rounded-full bg-terracota text-paper font-semibold tracking-wide hover:bg-amber hover:text-ink transition-all duration-300 shadow-lg shadow-terracota/30" style="transition-delay:.2s">
+        Entrar em contato
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-7-7l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       8. NEWSLETTER — apenas layout visual
+       ================================================================= -->
+  <section id="newsletter" class="py-16 sm:py-24 bg-sand">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="reveal bg-paper rounded-[2.5rem] shadow-xl shadow-ink/10 p-9 sm:p-14 text-center border border-ink/5">
+        <svg class="w-12 h-12 mx-auto mb-5 text-terracota" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l9 6 9-6M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8M3 8a2 2 0 012-2h14a2 2 0 012 2"/></svg>
+        <h2 class="font-display text-3xl sm:text-4xl font-light text-ink mb-3">
+          Receba dicas e inspirações de viagem
+        </h2>
+        <p class="text-ink/60 font-light mb-8">
+          Roteiros, segredos de destinos e novidades direto no seu e-mail. Sem spam.
+        </p>
+
+        <!-- Formulário (somente layout — sem backend).
+             Para ativar de verdade, conecte a um serviço como Mailchimp, Brevo ou Formspree. -->
+        <form onsubmit="event.preventDefault(); newsletterDemo(this);" class="space-y-4 text-left">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <input type="text" required placeholder="Seu nome"
+                   class="w-full px-5 py-3.5 rounded-full bg-sand border border-ink/10 focus:border-terracota focus:ring-2 focus:ring-terracota/20 outline-none transition" />
+            <input type="email" required placeholder="Seu melhor e-mail"
+                   class="w-full px-5 py-3.5 rounded-full bg-sand border border-ink/10 focus:border-terracota focus:ring-2 focus:ring-terracota/20 outline-none transition" />
+          </div>
+          <button type="submit"
+                  class="w-full py-4 rounded-full bg-ink text-paper font-semibold tracking-wide hover:bg-forest transition-colors duration-300">
+            Quero receber
+          </button>
+          <p id="newsletter-msg" class="hidden text-center text-forest text-sm pt-1"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       9. FOOTER
+       ================================================================= -->
+  <footer class="bg-ink text-paper pt-20 pb-10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid md:grid-cols-3 gap-12 pb-14 border-b border-white/10">
+
+        <!-- Marca -->
+        <div>
+          <div class="flex items-center gap-2.5 mb-4">
+            <svg class="w-8 h-8 text-amber" viewBox="0 0 100 100" fill="none">
+              <circle cx="50" cy="50" r="44" stroke="currentColor" stroke-width="4"/>
+              <polygon points="50,24 57,50 50,76 43,50" fill="#C5683E"/>
+              <polygon points="24,50 50,43 76,50 50,57" fill="currentColor"/>
+            </svg>
+            <span class="font-display text-xl">Além da Bússola</span>
+          </div>
+          <p class="text-paper/60 font-light italic">"Explorando o mundo além dos mapas."</p>
+        </div>
+
+        <!-- Links rápidos -->
+        <div>
+          <h3 class="text-sm tracking-[0.2em] uppercase text-amber mb-5">Links rápidos</h3>
+          <ul class="space-y-3 text-paper/70">
+            <li><a href="https://instagram.com/" target="_blank" rel="noopener" class="nav-link hover:text-paper transition">Instagram</a></li>
+            <li><a href="https://tiktok.com/"    target="_blank" rel="noopener" class="nav-link hover:text-paper transition">TikTok</a></li>
+            <li><a href="https://youtube.com/"   target="_blank" rel="noopener" class="nav-link hover:text-paper transition">YouTube</a></li>
+            <li><a href="#contato" class="nav-link hover:text-paper transition">Contato</a></li>
+          </ul>
+        </div>
+
+        <!-- Navegação do site -->
+        <div>
+          <h3 class="text-sm tracking-[0.2em] uppercase text-amber mb-5">Navegue</h3>
+          <ul class="space-y-3 text-paper/70">
+            <li><a href="#sobre"    class="nav-link hover:text-paper transition">Quem Somos</a></li>
+            <li><a href="#destinos" class="nav-link hover:text-paper transition">Destinos</a></li>
+            <li><a href="#planeje"  class="nav-link hover:text-paper transition">Planeje sua viagem</a></li>
+            <!-- Estrutura preparada para futura expansão (ex.: blog) -->
+            <li><a href="#" class="nav-link hover:text-paper transition">Blog <span class="text-xs text-amber/70">(em breve)</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright (ano preenchido automaticamente via JS) -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-paper/50">
+        <p>© <span id="year"></span> Além da Bússola. Todos os direitos reservados.</p>
+        <p>Feito com vontade de viajar 🧭</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =================================================================
+       JAVASCRIPT — toda a interatividade em JS puro (sem dependências)
+       ================================================================= -->
+  <script>
+  /* =================================================================
+     INTERATIVIDADE — JS puro, sem dependências.
+     Ordem importante: primeiro definimos o observador de animação,
+     SÓ DEPOIS desenhamos os cards (evita erro de inicialização).
+     Tudo roda após o DOM estar pronto.
+     ================================================================= */
+  document.addEventListener('DOMContentLoaded', function () {
+
+    /* -------------------------------------------------------------
+       [DADOS] AFILIADOS — edite/adicione itens livremente.
+       icon: chave do objeto ICONS (definido abaixo)
+       ------------------------------------------------------------- */
+    const AFILIADOS = [
+      { icon: 'shield',  title: 'Seguro Viagem',          desc: 'Viaje protegido em qualquer lugar do mundo, com cobertura completa.', link: '#' },
+      { icon: 'bed',     title: 'Hospedagem',             desc: 'Encontre hotéis, pousadas e estadias incríveis com os melhores preços.', link: '#' },
+      { icon: 'sim',     title: 'Chip Internacional',     desc: 'Internet em mais de 100 países assim que você pousar. Sem surpresas.', link: '#' },
+      { icon: 'card',    title: 'Cartão para Viagem',     desc: 'Câmbio mais justo e zero IOF para gastar no exterior com tranquilidade.', link: '#' },
+      { icon: 'camera',  title: 'Equipamentos de Viagem', desc: 'Câmeras, mochilas e acessórios testados por nós em estrada de verdade.', link: '#' },
+      { icon: 'compass', title: 'Roteiros & Experiências',desc: 'Passeios e experiências selecionadas para aproveitar cada destino ao máximo.', link: '#' },
+    ];
+
+    /* -------------------------------------------------------------
+       [DADOS] DESTINOS — edite nome, país, imagem e link de conteúdo.
+       ------------------------------------------------------------- */
+    const DESTINOS = [
+      { nome: 'Punta Cana',           pais: 'República Dominicana', img: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=900&q=80', link: '#' },
+      { nome: 'Serra da Mantiqueira', pais: 'Brasil',               img: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=900&q=80', link: '#' },
+      { nome: 'Maceió',               pais: 'Brasil',               img: 'https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=900&q=80', link: '#' },
+      { nome: 'Inglaterra',           pais: 'Reino Unido',          img: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=900&q=80', link: '#' },
+      { nome: 'Alemanha',             pais: 'Europa',               img: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=900&q=80', link: '#' },
+      { nome: 'Itália',               pais: 'Europa',               img: 'https://images.unsplash.com/photo-1499678329028-101435549a4e?w=900&q=80', link: '#' },
+      { nome: 'Bélgica',              pais: 'Europa',               img: 'https://images.unsplash.com/photo-1491557345352-5929e343eb89?w=900&q=80', link: '#' },
+      { nome: 'França',               pais: 'Europa',               img: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=900&q=80', link: '#' },
+      { nome: 'Áustria',              pais: 'Europa',               img: 'https://images.unsplash.com/photo-1516550893923-42d28e5677af?w=900&q=80', link: '#' },
+      { nome: 'Luxemburgo',           pais: 'Europa',               img: 'https://images.unsplash.com/photo-1558271736-cd043ef2e911?w=900&q=80', link: '#' },
+    ];
+
+    /* Ícones (SVG inline) dos cards de afiliados */
+    const ICONS = {
+      shield:  '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 3v6c0 4.2-3 7.4-7 9-4-1.6-7-4.8-7-9V6l7-3z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/>',
+      bed:     '<path stroke-linecap="round" stroke-linejoin="round" d="M3 18V8a2 2 0 012-2h14a2 2 0 012 2v10M3 14h18M7 10h4"/>',
+      sim:     '<rect x="6" y="3" width="12" height="18" rx="2"/><path stroke-linecap="round" d="M9 12h6M9 16h6M12 8v0"/>',
+      card:    '<rect x="3" y="5" width="18" height="14" rx="2"/><path stroke-linecap="round" d="M3 10h18M7 15h4"/>',
+      camera:  '<path stroke-linecap="round" stroke-linejoin="round" d="M3 8a2 2 0 012-2h2l1.5-2h7L17 6h2a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/><circle cx="12" cy="13" r="3.2"/>',
+      compass: '<circle cx="12" cy="12" r="9"/><path stroke-linejoin="round" d="M15.5 8.5l-2 5-5 2 2-5 5-2z"/>',
+    };
+
+    /* -------------------------------------------------------------
+       OBSERVADOR DE ANIMAÇÃO (definido ANTES de desenhar os cards)
+       ------------------------------------------------------------- */
+    let revealObserver = null;
+    if ('IntersectionObserver' in window) {
+      revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            if (entry.target.dataset.grow) {
+              entry.target.style.width = entry.target.dataset.grow + 'px';
+            }
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+    }
+    function observeReveals() {
+      const els = document.querySelectorAll('.reveal:not(.is-visible)');
+      if (revealObserver) {
+        els.forEach(function (el) { revealObserver.observe(el); });
+      } else {
+        // Navegador sem suporte: mostra tudo imediatamente
+        els.forEach(function (el) {
+          el.classList.add('is-visible');
+          if (el.dataset.grow) el.style.width = el.dataset.grow + 'px';
+        });
+      }
+    }
+
+    /* -------------------------------------------------------------
+       Desenha os cards de AFILIADOS
+       ------------------------------------------------------------- */
+    const afGrid = document.getElementById('afiliados-grid');
+    if (afGrid) {
+      afGrid.innerHTML = AFILIADOS.map(function (a, i) {
+        return '<article class="reveal lift bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 flex flex-col" style="transition-delay:' + ((i % 3) * 0.08) + 's">' +
+          '<span class="w-14 h-14 grid place-items-center rounded-2xl bg-amber/15 text-amber mb-6">' +
+          '<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">' + (ICONS[a.icon] || '') + '</svg></span>' +
+          '<h3 class="font-display text-2xl mb-2">' + a.title + '</h3>' +
+          '<p class="text-paper/65 font-light leading-relaxed flex-1">' + a.desc + '</p>' +
+          '<a href="' + a.link + '" target="_blank" rel="noopener" class="mt-6 inline-flex items-center gap-2 text-amber font-semibold tracking-wide group/btn">Acessar' +
+          '<svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-7-7l7 7-7 7"/></svg></a>' +
+          '</article>';
+      }).join('');
+    }
+
+    /* -------------------------------------------------------------
+       Desenha a galeria de DESTINOS
+       ------------------------------------------------------------- */
+    const dsGrid = document.getElementById('destinos-grid');
+    if (dsGrid) {
+      dsGrid.innerHTML = DESTINOS.map(function (d, i) {
+        const fallback = 'https://picsum.photos/seed/' + encodeURIComponent(d.nome) + '/900/700';
+        // O CARD INTEIRO é um link (melhor área de toque no celular).
+        // O "Ver conteúdo" fica SEMPRE visível no mobile; no desktop ganha um leve realce no hover.
+        return '<a href="' + d.link + '" class="reveal group relative block overflow-hidden rounded-3xl shadow-lg shadow-ink/10 h-64 sm:h-72 lift" style="transition-delay:' + ((i % 3) * 0.08) + 's">' +
+          '<img src="' + d.img + '" alt="' + d.nome + '" loading="lazy" class="zoom-img absolute inset-0 w-full h-full object-cover" ' +
+          'onerror="this.onerror=null;this.src=\'' + fallback + '\';" />' +
+          '<div class="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/30 to-transparent"></div>' +
+          '<div class="absolute inset-x-0 bottom-0 p-5 sm:p-6">' +
+          '<p class="text-amber text-[11px] tracking-[0.2em] uppercase mb-1">' + d.pais + '</p>' +
+          '<h3 class="font-display text-2xl text-paper mb-2">' + d.nome + '</h3>' +
+          '<span class="inline-flex items-center gap-2 text-paper text-sm font-medium sm:opacity-80 sm:group-hover:opacity-100 transition-opacity">Ver conteúdo' +
+          '<svg class="w-4 h-4 sm:group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-7-7l7 7-7 7"/></svg></span>' +
+          '</div></a>';
+      }).join('');
+    }
+
+    /* Agora sim: observa TODOS os .reveal (estáticos + recém-criados) */
+    observeReveals();
+
+    /* -------------------------------------------------------------
+       NAVBAR — fundo sólido + texto escuro ao rolar
+       ------------------------------------------------------------- */
+    const navbar = document.getElementById('navbar');
+    const navLinks = document.getElementById('nav-links');
+    const brandName = document.getElementById('brand-name');
+    const menuBtn = document.getElementById('menu-btn');
+
+    function onScroll() {
+      const scrolled = window.scrollY > 60;
+      navbar.classList.toggle('bg-paper/95', scrolled);
+      navbar.classList.toggle('backdrop-blur-md', scrolled);
+      navbar.classList.toggle('shadow-md', scrolled);
+      [navLinks, brandName, menuBtn].forEach(function (el) {
+        if (!el) return;
+        el.classList.toggle('text-ink', scrolled);
+        el.classList.toggle('text-paper', !scrolled);
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    /* MENU MOBILE */
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', function () {
+        const open = mobileMenu.classList.toggle('hidden') === false;
+        menuBtn.setAttribute('aria-expanded', String(open));
+      });
+      document.querySelectorAll('.mobile-link').forEach(function (link) {
+        link.addEventListener('click', function () { mobileMenu.classList.add('hidden'); });
+      });
+    }
+
+    /* -------------------------------------------------------------
+       CONTADORES ANIMADOS
+       ------------------------------------------------------------- */
+    function animateCounter(el) {
+      const target = +el.dataset.target;
+      const suffix = el.dataset.suffix || '';
+      const duration = 1800;
+      const start = performance.now();
+      function tick(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
+        el.textContent = Math.round(target * eased).toLocaleString('pt-BR') + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+    const counters = document.querySelectorAll('.counter');
+    if ('IntersectionObserver' in window) {
+      const counterObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(function (c) { counterObserver.observe(c); });
+    } else {
+      counters.forEach(animateCounter);
+    }
+
+    /* NEWSLETTER (demo, sem backend) */
+    window.newsletterDemo = function (form) {
+      const msg = document.getElementById('newsletter-msg');
+      msg.textContent = 'Inscrição recebida! (demo — conecte a um serviço de e-mail para ativar)';
+      msg.classList.remove('hidden');
+      form.reset();
+    };
+
+    /* ANO ATUAL no rodapé */
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    /* -------------------------------------------------------------
+       REDE DE SEGURANÇA: se por qualquer motivo a animação não
+       disparar, garante que todo o conteúdo apareça após 1,5s.
+       ------------------------------------------------------------- */
+    setTimeout(function () {
+      document.querySelectorAll('.reveal:not(.is-visible)').forEach(function (el) {
+        el.classList.add('is-visible');
+        if (el.dataset.grow) el.style.width = el.dataset.grow + 'px';
+      });
+    }, 1500);
+  });
+  </script>
+</body>
+</html>
